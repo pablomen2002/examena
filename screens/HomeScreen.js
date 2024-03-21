@@ -4,9 +4,9 @@ import React from 'react'
 const HomeScreen = ({ navigation }) => {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
+        <Text>APLICAIONES MOVILES HIBRIDAS</Text>
         <Button
-          title="Go to Details"
+          title="Materias"
           onPress={() => navigation.navigate('Details')}
         />
       </View>

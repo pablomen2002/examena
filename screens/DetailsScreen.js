@@ -1,46 +1,33 @@
-import { Button, Text, View, FlatList, StyleSheet } from 'react-native';
+import { Button, Text, View, StyleSheet } from 'react-native';
 import React from 'react';
-
-const materiasCarrera1 = ['Matemáticas', 'Física', 'Química', 'Historia', 'Literatura'];
-const materiasCarrera2 = ['Programación', 'Algoritmos', 'Bases de Datos', 'Redes', 'Sistemas Operativos'];
+import MateriasList from '../components/MateriasList'; 
 
 const DetailsScreen = ({ navigation }) => {
-
-    const renderItem = ({ item }) => (
-        <Text style={styles.item}>{item}</Text>
-    );
-
     return (
-        <View style={{ flex: 1, backgroundColor: '#fff' }}>
+        <View style={styles.container}>
             <Text style={styles.header}>
                 Lista de materias
             </Text>
 
-            <Text style={styles.title}>Carrera 1</Text>
-            <FlatList
-                data={materiasCarrera1}
-                renderItem={renderItem}
-                keyExtractor={(item, index) => 'carrera1-' + index}
-            />
+            <Text style={styles.title}>ING.SISTEMAS COMPUTACIONALES</Text>
+            <MateriasList numeroCarrera={1} />
 
-            <Text style={styles.title}>Carrera 2</Text>
-            <FlatList
-                data={materiasCarrera2}
-                renderItem={renderItem}
-                keyExtractor={(item, index) => 'carrera2-' + index}
-            />
+            <Text style={styles.title}>ING. TECNOLOGIAS DE LA INFORMACION</Text>
+            <MateriasList numeroCarrera={2} />
 
             <Button
-                title="Go back to Home"
+                title="REGRESAR"
                 onPress={() => navigation.goBack()}
             />
         </View>
     );
 };
 
-export default DetailsScreen;
-
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+    },
     header: {
         width: '100%',
         padding: 16,
@@ -58,9 +45,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginLeft: 16,
     },
-    item: {
-        fontSize: 18,
-        marginTop: 10,
-        marginLeft: 16,
-    },
+    
 });
+
+export default DetailsScreen;
